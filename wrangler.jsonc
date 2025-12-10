@@ -1,6 +1,6 @@
 {
 	"main": "dist/_worker.js/index.js",
-	"name": "accessible-astro-starter",
+	"name": "ssp",
   "compatibility_date": "2025-12-10",
   "compatibility_flags": [
     "nodejs_compat",

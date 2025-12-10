@@ -9,6 +9,8 @@ import sitemap from '@astrojs/sitemap'
 import tailwindcss from '@tailwindcss/vite'
 import { watch } from 'fs'
 
+import cloudflare from '@astrojs/cloudflare';
+
 // Check if we're using a symlinked/workspace setup
 const componentsPath = resolve('./node_modules/accessible-astro-components')
 const isLinked = existsSync(componentsPath) && lstatSync(componentsPath).isSymbolicLink()
@@ -90,4 +92,5 @@ export default defineConfig({
   site: 'https://accessible-astro-starter.incluud.dev',
   integrations: [compress(), icon(), mdx(), sitemap()],
   vite: viteConfig,
+  adapter: cloudflare(),
 })

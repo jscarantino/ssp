@@ -15,20 +15,20 @@ import { Icon } from 'astro-icon/components'
   <section class="container">
     <div class="grid grid-cols-1 gap-32 md:grid-cols-2">
       <div class="space-content">
-        <Form name="contact" action="/thank-you" method="post">
+        <Form name="contact" action="https://api.web3forms.com/submit" method="post">
           <!-- Input field with custom validation message -->
+          <input type="hidden" name="access_key" value="cc8a4b82-4bca-4fc6-a591-58e88d5cd254" />
           <Input
-            name="firstname"
+            name="name"
             label="Your Name"
             required
             data-validation="We need your name to address you correctly"
             autocomplete="given-name"
           />
 
-          <Input name="email" label="Email address" type="email" required autocomplete="email" />
+          <Input name="email" label="Email Address" type="email" required autocomplete="email" />
 
           <!-- Custom validation with pattern -->
-          <Input name="phone" label="Phone number" type="tel" required data-validation-pattern="^[0-9]{10}$" />
 
           <Textarea name="message" label="Message" required />
 
@@ -36,7 +36,6 @@ import { Icon } from 'astro-icon/components'
         </Form><br /><br />
       </div>
       <div class="space-content">
-
         <div class="gap-2xs flex items-center">
           <Icon aria-hidden="true" name="lucide:mail" size={20} class="shrink-0" />
           <p>
